@@ -41,7 +41,13 @@ urlpatterns = [
     path('signup/', authentication.views.signup_page, name='signup'),
     path('upload/profile/photo/', authentication.views.upload_profile_photo, name='upload_profile_photo'),
     path('home/', blog.views.home, name='home'),
+    path('photo-feed/', blog.views.photo_feed, name='photo_feed'),
     path('photo/upload/', blog.views.photo_upload, name='photo_upload'),
+    path('photo/upload-multiple/', blog.views.create_multiple_photos, name='create_multiple_photos'),
+    path('blog/create/', blog.views.blog_and_photo_upload, name='blog_create'),
+    path('blog/<int:blog_id>/', blog.views.view_blog, name='view_blog'),
+    path('blog/<int:blog_id>/edit/', blog.views.edit_blog, name='edit_blog'),
+    path('follow-users/', blog.views.follow_users, name='follow_users'),
 ]
 
 if settings.DEBUG: 
